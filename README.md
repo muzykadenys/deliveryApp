@@ -8,7 +8,7 @@ you can reach website by this test link https://muzykadenys.github.io/
 clone repository on your computer
 
 ```bash
-git clone https://github.com/muzykadenys/timetable_desctop.git
+https://github.com/muzykadenys/deliveryApp.git
 ```
 
 📥
