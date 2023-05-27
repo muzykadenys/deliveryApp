@@ -1,0 +1,46 @@
+@import '../../settings/settings.scss';
+
+.HeaderSection {
+  width: 100vw;
+  font-weight: 500;
+
+  .HeaderSection_Wrap {
+    margin: 0px $margin_1920;
+
+    height: $header_height_1920;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .HeaderSection_Wrap_Left {
+      display: flex;
+      gap: 15px;
+      .HeaderSection_Wrap_Left_El {
+        cursor: pointer;
+
+        text-decoration: underline;
+        color: $black;
+      }
+    }
+
+    .HeaderSection_Wrap_Right {
+      .HeaderSection_Wrap_Right_El {
+        cursor: pointer;
+        color: $black;
+
+        .HeaderSection_Wrap_Right_El_Point {
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          z-index: 1;
+          border-radius: 100px;
+          background-color: $r_1;
+        }
+
+        .HeaderSection_Wrap_Right_El_Icon {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

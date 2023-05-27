@@ -1,0 +1,37 @@
+$margin_1920: 30px;
+
+$header_height_1920: 60px;
+
+$line_width_thin: 0.4px;
+
+$border_radius: 8px;
+
+$input_width: 400px;
+$input_height: 70px;
+
+$card_height: 180px;
+$card_width: 320px;
+$card_height_img: calc($card_height - 30px);
+
+$black: #000000;
+$white: white;
+
+$g_1: rgb(22, 22, 22);
+
+$g_3: rgb(101, 101, 101);
+$g_4: rgb(176, 165, 165);
+$g_5: rgb(218, 218, 218);
+$g_6: rgb(240, 240, 240);
+$g_7: rgb(245, 245, 245);
+$g_8: rgb(250, 250, 250);
+
+$r_1: rgb(255, 73, 36);
+
+#root,
+.App,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}

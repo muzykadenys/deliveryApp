@@ -1,0 +1,145 @@
+@import '../../settings/settings.scss';
+
+$left_width: 20%;
+$right_width: 80%;
+
+.ShopsSection {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - $header_height_1920);
+
+  .ShopsSection_Wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .ShopsSection_Wrap_Left {
+      display: flex;
+      justify-content: center;
+      width: $left_width;
+      height: 100%;
+
+      .ShopsSection_Wrap_Left_Wrap {
+        margin-top: $margin_1920;
+        margin-left: $margin_1920;
+        margin-right: $margin_1920;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 95%;
+        gap: 10px;
+        transition: opacity 0.4s ease-in-out;
+
+        .ShopsSection_Wrap_Left_Wrap_El {
+          $margin_in: 30px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          border: $line_width_thin $g_5 solid;
+          border-radius: 8px;
+          transition: background 0.3s ease-in-out;
+
+          .ShopsSection_Wrap_Left_Wrap_El_Name {
+            font-size: 18px;
+            font-weight: 600;
+            margin: $margin_in 0px $margin_in $margin_in;
+          }
+
+          .ShopsSection_Wrap_Left_Wrap_El_Amount {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            color: $g_4;
+            margin: $margin_in $margin_in $margin_in 0px;
+          }
+
+          &:hover {
+            background-color: $g_6;
+          }
+        }
+        .active {
+          background-color: $g_7;
+        }
+        .disable {
+          cursor: default;
+          background-color: $g_5;
+          opacity: 0.4;
+        }
+      }
+    }
+
+    .ShopsSection_Wrap_Right {
+      display: flex;
+      justify-content: center;
+      background-color: $g_6;
+      width: $right_width;
+      height: 100%;
+
+      .ShopsSection_Wrap_Right_Wrap {
+        $box_width: 300px;
+        $box_margin: 15px;
+
+        margin-top: $margin_1920;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(4, 1fr);
+        width: fit-content;
+        height: fit-content;
+        gap: 20px;
+
+        .ShopsSection_Wrap_Right_Wrap_El {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: end;
+          width: $box_width;
+          height: $box_width;
+          background-color: $white;
+          clip-path: inset(0% 0% round $border_radius);
+
+          .ShopsSection_Wrap_Right_Wrap_El_ImageWrap_Image {
+            width: 85%;
+            height: 75%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          }
+
+          .ShopsSection_Wrap_Right_Wrap_El_Bottom {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+            width: 85%;
+            height: 60px;
+
+            .ShopsSection_Wrap_Right_Wrap_El_Bottom_Name {
+              font-size: 18px;
+              font-weight: 500;
+            }
+
+            .ShopsSection_Wrap_Right_Wrap_El_Bottom_Button {
+              cursor: pointer;
+              padding: 5px;
+              border-radius: 100px;
+              transition: background 0.3s ease-in-out;
+
+              .ShopsSection_Wrap_Right_Wrap_El_Bottom_Button_Icon {
+                font-size: 25px;
+              }
+
+              &:hover {
+                background-color: $g_6;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

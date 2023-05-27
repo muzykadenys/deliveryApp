@@ -1,0 +1,194 @@
+@import '../../settings/settings.scss';
+
+$left: 50%;
+$right: 50%;
+
+$submit_height: 100px;
+
+.BasketSection {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: calc(100vh - $header_height_1920);
+
+  .BasketSection_Left {
+    display: flex;
+    justify-content: center;
+    width: $left;
+    height: 100%;
+
+    .BasketSection_Left_Wrap {
+      margin-top: $margin_1920;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      height: fit-content;
+      gap: 70px;
+
+      .BasketSection_Left_Wrap_El {
+        width: $input_width;
+        height: $input_height;
+
+        .BasketSection_Left_Wrap_El_Input {
+          margin-top: 10px;
+          width: 100%;
+          height: 100%;
+          border: $line_width_thin $g_5 solid;
+          border-radius: $border_radius;
+          font-size: 20px;
+          padding: 0px 20px;
+        }
+      }
+    }
+  }
+
+  .BasketSection_Right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: $right;
+    height: 100%;
+    background-color: $g_7;
+
+    .BasketSection_Right_Wrap_WRAP {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: calc(100% - $submit_height);
+      overflow-y: auto;
+    }
+
+    .BasketSection_Right_Wrap {
+      margin-top: $margin_1920;
+      margin-bottom: $margin_1920;
+      display: grid;
+      height: fit-content;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $margin_1920;
+
+      .BasketSection_Right_Wrap_El {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // width: 100%;
+        width: 320px;
+        height: $card_height;
+        background-color: $white;
+
+        clip-path: inset(0% 0% round $border_radius);
+
+        .BasketSection_Right_Wrap_El_Image {
+          width: $card_height_img;
+          height: $card_height_img;
+          margin-left: 15px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+
+        .BasketSection_Right_Wrap_El_Count {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: end;
+          height: 100%;
+          width: 40%;
+          margin-right: 15px;
+          margin-bottom: 10px;
+
+          .BasketSection_Right_Wrap_El_Close {
+            margin-top: 13px;
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            cursor: pointer;
+
+            .BasketSection_Right_Wrap_El_Close_Icon {
+              font-size: 20px;
+            }
+          }
+
+          .BasketSection_Right_Wrap_El_Count_Wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: end;
+            width: 100%;
+            // height: 100%;
+
+            .BasketSection_Right_Wrap_El_Count_Result {
+              text-align: right;
+              word-break: break-all;
+              font-size: 40px;
+              font-weight: 600;
+            }
+
+            .BasketSection_Right_Wrap_El_Count_Example {
+              font-size: 18px;
+              font-weight: 500;
+            }
+
+            .BasketSection_Right_Wrap_El_Count_Counter {
+              margin-top: 8px;
+              display: flex;
+
+              .BasketSection_Right_Wrap_El_Count_Counter_Minus {
+                cursor: pointer;
+                .BasketSection_Right_Wrap_El_Count_Counter_Minus_Icon {
+                  font-size: 30px;
+                }
+              }
+
+              .BasketSection_Right_Wrap_El_Count_Counter_Plus {
+                cursor: pointer;
+                .BasketSection_Right_Wrap_El_Count_Counter_Plus_Icon {
+                  font-size: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .BasketSection_Right_Submit {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: $submit_height;
+      background-color: $white;
+
+      .BasketSection_Right_Submit_Total {
+        margin-left: $margin_1920;
+        font-size: 40px;
+        font-weight: 800;
+      }
+
+      .BasketSection_Right_Submit_Button {
+        margin-right: $margin_1920;
+        width: 170px;
+        height: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $black;
+        border-radius: $border_radius;
+        color: $white;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
