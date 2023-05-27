@@ -1,6 +1,6 @@
 # hi👋
 
-you can reach website by this test link 
+you can reach website by this test link https://muzykadenys.github.io/
 
 ## Installation client side
 
