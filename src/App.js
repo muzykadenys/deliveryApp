@@ -6,6 +6,7 @@ import Shops from './components/shops/Shops'
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import Basket from './components/basket/Basket'
 import History from './components/history/History'
+import Coupons from './components/coupons/Coupons'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Shops />} />
             <Route path="/basket" element={<Basket />} />
             <Route path="/history" element={<History />} />
+            <Route path="/coupons" element={<Coupons />} />
           </Routes>
         </div>
       </Provider>

@@ -10,6 +10,8 @@ import {
 import {
   CHANGE_iTEM_AMOUNT,
   CLEAR_ITEMS_FROM_BUSKET,
+  GET_COUPONS_ERROR,
+  GET_COUPONS_SUCCESS,
   REMOVE_ITEM_FROM_BASKET,
   SET_FROM_LOC_STORAGE_TO_BUSCKET,
   SET_USER_ORDER_ADDRESS,
@@ -115,18 +117,27 @@ function Basket() {
   const setFromLocStorageToBuket = (data) => {
     dispatch({ type: SET_FROM_LOC_STORAGE_TO_BUSCKET, payload: data })
   }
+  const getCouponsSuccess = (data) => {
+    dispatch({ type: GET_COUPONS_SUCCESS, payload: data })
+  }
+  const getCouponsError = (error) => {
+    dispatch({ type: GET_COUPONS_ERROR, error: error })
+  }
 
   const state = useSelector((state) => state)
   const { domain } = state.settings
   const { user, basket } = state.selected
   const { name, email, phone, address } = user
+  const { loading, data } = state.coupons
 
+  const submitRef = useRef(null)
+  const [codeInput, setCodeInput] = useState('')
+  const [percents, setPercents] = useState(0)
+  const [isCouponUsed, setIsCouponeUsed] = useState(false)
+  // ==============================================================
   const countTotal = () => {
     return basket.reduce((res, el) => res + el.amount * el.price, 0)
   }
-
-  const submitRef = useRef(null)
-  // ==============================================================
   const setInitialBasket = () => {
     const basketLocStorage = JSON.parse(localStorage.getItem('basket'))
     if (basketLocStorage) {
@@ -151,6 +162,33 @@ function Basket() {
         }, 200)
       }
     }
+  }
+
+  const clickActivate = () => {
+    if (!isCouponUsed) {
+      getCouponRequest()
+      setIsCouponeUsed(true)
+    }
+  }
+
+  const getCouponRequest = () => {
+    fetch(`${domain}/coupon`, {
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'application/json; charset=UTF-8',
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        // getCouponsSuccess(res)
+
+        res.forEach((el) => {
+          if (el.code == codeInput) setPercents(el.percents)
+        })
+      })
+      .catch((e) => {
+        // getCouponsError(e)
+      })
   }
 
   const postToDB = () => {
@@ -227,6 +265,22 @@ function Basket() {
             />
           </div>
         </div>
+
+        <div className="BasketSection_Left_Coupon">
+          <input
+            value={codeInput}
+            onChange={(e) => setCodeInput(e.target.value)}
+            className="BasketSection_Left_Coupon_Input"
+            placeholder="coupon code"
+          />
+
+          <div
+            onClick={clickActivate}
+            className="BasketSection_Left_Coupon_Button"
+          >
+            Activate
+          </div>
+        </div>
       </div>
 
       <div className="BasketSection_Right">
@@ -240,7 +294,7 @@ function Basket() {
 
         <div className="BasketSection_Right_Submit">
           <div className="BasketSection_Right_Submit_Total">
-            {countTotal()}$
+            {countTotal() - (countTotal() * percents) / 100}$
           </div>
           <div
             ref={submitRef}

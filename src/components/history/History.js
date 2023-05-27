@@ -94,31 +94,33 @@ function History() {
   return (
     <div className="HistorySection">
       <div className="HistorySection_Top_Wrap">
-        <div className="HistorySection_Top">
-          <div className="HistorySection_Top_El">
-            <div className="HistorySection_Top_El_Title">Email</div>
-            <input
-              value={emailInput}
-              onChange={(e) => {
-                setEmailInput(e.target.value)
-              }}
-              className="HistorySection_Top_El_Input"
-            />
-          </div>
+        <div className='HistorySection_Top_Wrap_Wrap'>
+          <div className="HistorySection_Top">
+            <div className="HistorySection_Top_El">
+              <div className="HistorySection_Top_El_Title">Email</div>
+              <input
+                value={emailInput}
+                onChange={(e) => {
+                  setEmailInput(e.target.value)
+                }}
+                className="HistorySection_Top_El_Input"
+              />
+            </div>
 
-          <div className="HistorySection_Top_El">
-            <div className="HistorySection_Top_El_Title">Phone</div>
-            <input
-              value={phoneInput}
-              onChange={(e) => {
-                setPhoneInput(e.target.value)
-              }}
-              className="HistorySection_Top_El_Input"
-            />
-          </div>
+            <div className="HistorySection_Top_El">
+              <div className="HistorySection_Top_El_Title">Phone</div>
+              <input
+                value={phoneInput}
+                onChange={(e) => {
+                  setPhoneInput(e.target.value)
+                }}
+                className="HistorySection_Top_El_Input"
+              />
+            </div>
 
-          <div onClick={clickFind} className="HistorySection_Top_Button">
-            Find
+            <div onClick={clickFind} className="HistorySection_Top_Button">
+              Find
+            </div>
           </div>
         </div>
       </div>

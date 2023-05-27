@@ -49,7 +49,7 @@ function Shops() {
   }
 
   const state = useSelector((state) => state)
-  const { domain, localStorageBasket } = state.settings
+  const { domain } = state.settings
   const { loading, data } = state.shopsList
   const { shopName, shopIndex, basket, busketShopName } = state.selected
   const shopsListRef = useRef(null)

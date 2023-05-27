@@ -1,0 +1,55 @@
+@import '../../settings/settings.scss';
+
+.CouponsSection {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - $header_height_1920);
+  background-color: $g_7;
+
+  .CouponsSection_Wrap {
+    height: 100%;
+    margin-top: $margin_1920;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+
+    .CouponsSection_El {
+      background-color: $white;
+      width: 220px;
+      height: fit-content;
+      padding: 10px;
+      border-radius: $border_radius;
+
+      .CouponsSection_El_Percents {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 80px;
+        font-weight: 900;
+      }
+
+      .CouponsSection_El_CopyWrap {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 15px;
+        gap: 10px;
+
+        .CouponsSection_El_CopyWrap_Code {
+          padding: 3px 6px;
+          background-color: $g_6;
+          border-radius: 3px;
+          transition: background 0.3s ease-in-out;
+        }
+
+        .CouponsSection_El_CopyWrap_Button {
+          cursor: pointer;
+          .CouponsSection_El_CopyWrap_Button_Icon {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

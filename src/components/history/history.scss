@@ -1,7 +1,7 @@
 @import '../../settings/settings.scss';
 
-$top: 30vh;
-$bottom: 70vh;
+$top: 20%;
+$bottom: 80%;
 
 .HistorySection {
   display: flex;
@@ -11,24 +11,34 @@ $bottom: 70vh;
   .HistorySection_Top_Wrap {
     display: flex;
     justify-content: center;
-    width: fit-content;
+    align-items: center;
+    width: 100vw;
+
+    .HistorySection_Top_Wrap_Wrap {
+      height: 100px;
+      width: fit-content;
+      margin-bottom: $margin_1920;
+    }
 
     .HistorySection_Top {
       display: flex;
-      align-items: center;
-      flex-direction: column;
-      gap: 20px;
+      align-items: end;
+      gap: 50px;
       width: 100%;
-      height: calc($top - $header_height_1920);
+      height: 100%;
 
       .HistorySection_Top_El {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 250px;
+        height: 100px;
+
         .HistorySection_Top_El_Input {
-          margin-top: 10px;
-          width: $input_width;
-          height: $input_height;
-          border: $line_width_thin $g_5 solid;
+          width: 100%;
+          height: 50%;
           border-radius: $border_radius;
-          font-size: 20px;
+          font-size: 18px;
           padding: 0px 20px;
         }
       }
@@ -37,34 +47,35 @@ $bottom: 70vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 250px;
+        height: 50px;
         background-color: $black;
         color: $white;
-        width: $input_width;
-        height: $input_height;
         border-radius: $border_radius;
+        padding: 2px;
         cursor: pointer;
       }
     }
   }
 
   .HistorySection_Bottom {
-    background-color: $g_7;
+    // background-color: $g_7;
     display: flex;
     justify-content: center;
 
     overflow-y: auto;
-    // background-color: aquamarine;
     width: 100vw;
     height: $bottom;
 
     .HistorySection_Bottom_Wrap {
       margin-top: $margin_1920;
+      margin-bottom: $margin_1920;
       display: flex;
       align-items: center;
       flex-direction: column;
       height: fit-content;
       width: 100%;
-      gap: 15px;
+      gap: 20px;
     }
 
     .HistorySection_Bottom_Nothing {
@@ -87,11 +98,13 @@ $bottom: 70vh;
   .HistoryBlock_Left {
     overflow-x: auto;
     display: flex;
+    @include horizontal_scroll;
 
     .HistoryBlock_Left_Wrap {
       display: flex;
       gap: 15px;
       margin-right: $margin_1920;
+      padding-bottom: 10px;
     }
   }
 
@@ -104,8 +117,8 @@ $bottom: 70vh;
       justify-content: center;
       align-items: center;
       width: 90%;
-      height: 100%;
-      background-color: $white;
+      height: 98;
+      border: $line_width_thin $g_6 solid;
       font-size: 40px;
       font-weight: 800;
 
@@ -121,6 +134,7 @@ $bottom: 70vh;
   width: $card_width;
   height: $card_height;
   background-color: $white;
+  border: $line_width_thin $g_6 solid;
   border-radius: $border_radius;
 
   .BrickSection_Image {
@@ -145,7 +159,7 @@ $bottom: 70vh;
 
     .BrickSection_Main_Name {
       margin-top: 15px;
-      font-size: 26px;
+      font-size: 20px;
       font-weight: 600;
     }
 

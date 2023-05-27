@@ -125,6 +125,7 @@ const selectedReducer = (state = initialState, action) => {
       return {
         ...state,
         basket: [],
+        busketShopName: '',
       }
     case SET_SHOPNAME_SELECTED:
       return {

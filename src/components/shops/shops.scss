@@ -143,3 +143,37 @@ $right_width: 80%;
     }
   }
 }
+
+@media only screen and (max-width: 2700px) {
+  .ShopsSection {
+    .ShopsSection_Wrap {
+      .ShopsSection_Wrap_Right {
+        .ShopsSection_Wrap_Right_Wrap {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 2100px) {
+  .ShopsSection {
+    .ShopsSection_Wrap {
+      .ShopsSection_Wrap_Right {
+        .ShopsSection_Wrap_Right_Wrap {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1640px) {
+  .ShopsSection {
+    .ShopsSection_Wrap {
+      .ShopsSection_Wrap_Right {
+        .ShopsSection_Wrap_Right_Wrap {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+}

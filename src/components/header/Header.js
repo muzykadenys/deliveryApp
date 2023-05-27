@@ -19,6 +19,9 @@ function Header() {
           <Link to="/history" className="HeaderSection_Wrap_Left_El">
             History
           </Link>
+          <Link to="/coupons" className="HeaderSection_Wrap_Left_El">
+            Coupons
+          </Link>
         </div>
 
         <div className="HeaderSection_Wrap_Right">
